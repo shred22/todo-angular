@@ -5,6 +5,7 @@ import { ListTodosComponent } from './list-todos/list-todos.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouteGuardServiceService } from './service/route-guard-service.service';
+import { UpdateTodoComponent } from './update-todo/update-todo.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -13,8 +14,9 @@ const routes: Routes = [
   {path:'welcome/:name', component: WelcomeComponent, canActivate:[RouteGuardServiceService]},
   {path:'todos', component: ListTodosComponent, canActivate:[RouteGuardServiceService]},
   {path:'logout', component: LogoutComponent, canActivate:[RouteGuardServiceService]},
+  {path:'todos/:id', component: UpdateTodoComponent, canActivate:[RouteGuardServiceService]},
   {path:'**', component: ErrorComponent}
-  
+
 ];
 
 @NgModule({
