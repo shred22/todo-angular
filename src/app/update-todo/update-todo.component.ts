@@ -39,8 +39,9 @@ export class UpdateTodoComponent implements OnInit {
     }
     else {
       this.dataService.updateTodoById(this.todo.id, this.todo)
-      .subscribe(response => this.todo = response)
-      this.route.navigate(['todos'])
+      .subscribe(response => {
+        this.todo = response
+        this.route.navigate(['todos'])})
     }
 
   }

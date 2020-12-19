@@ -10,6 +10,7 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
 })
 export class WelcomeComponent implements OnInit {
   username: String = ''
+  customMessage: string
 
   constructor(private activatedRoute: ActivatedRoute,
     private welcomeDataService: WelcomeDataService) { }
@@ -19,14 +20,14 @@ export class WelcomeComponent implements OnInit {
   }
 
   getWelcomeMessage() {
-    console.log(this.welcomeDataService.executeHelloService(this.username).subscribe(
+    this.welcomeDataService.executeHelloService(this.username).subscribe(
       response => this.handleSuccessfulResponse(response.message)
-    ))
-    console.log("slkjfklsdjflksdjflksdjflkjd")
+    )
   }
 
   handleSuccessfulResponse(response) {
     console.log(response)
+    this.customMessage = response
   }
 
 }
