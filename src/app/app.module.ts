@@ -13,6 +13,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UpdateTodoComponent } from './update-todo/update-todo.component';
 import { HttpBasicAuthInterceptorService } from './service/http/http-basic-auth-interceptor.service';
+import { RegistraionComponent } from './registraion/registraion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpBasicAuthInterceptorService } from './service/http/http-basic-auth-
     MenuComponent,
     FooterComponent,
     LogoutComponent,
-    UpdateTodoComponent
+    UpdateTodoComponent,
+    RegistraionComponent
   ],
   imports: [
     BrowserModule,

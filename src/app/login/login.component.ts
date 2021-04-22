@@ -15,11 +15,13 @@ export class LoginComponent implements OnInit {
   username= ""
   password= ""
   errorMessage = "Invalid Credentials .!"
+
   invalidLogin = false
 
   constructor(private router: Router, private authService: HardcodedAuthenticationService,
     private basicAuthService: HttpBasicAuthenticationService,
-    private jwtAuthService: HttpJWTAuthenticationService) {}
+    private jwtAuthService: HttpJWTAuthenticationService,
+    public loginSuccessMessage:string) {}
 
   ngOnInit(): void {
 
@@ -50,8 +52,6 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = true
       }
     )
-
-
   }
 
   handleJWTAuthLogin() {
